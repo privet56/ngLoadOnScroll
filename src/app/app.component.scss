@@ -1,0 +1,26 @@
+.conti {
+  position: absolute;
+  top: 66px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-sidenav {
+  min-width: 100px;
+  border-top-right-radius:    5em;
+  border-bottom-left-radius:  5em;
+  background-color: #EEEEEE;
+  padding: 9px;
+}
+.is-mobile {
+  background-color: #DDDDDD;
+}
+.activeroute {
+  background-color: white !important;
+  filter: drop-shadow(-6px 10px 4px #CCCCCC);
+}
+.navibtn {
+  width: 133px;
+  margin-bottom: 9px;
+}
