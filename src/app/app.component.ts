@@ -12,7 +12,6 @@ export class AppComponent implements OnDestroy
 {
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
 
-
   mobileQuery: MediaQueryList;
   private readonly _mobileQueryListener: () => void;
 
@@ -28,5 +27,12 @@ export class AppComponent implements OnDestroy
   }
   closeSideNav() {
     this.sidenav.close();
+  }
+  sideNavOpen() : void {
+    this.sidenav.open();
+  }
+  get sideNavIsOpened() : boolean {
+    if(!this.sidenav) return true;
+    return this.sidenav.opened;
   }
 }

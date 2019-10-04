@@ -10,4 +10,10 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 
 WORK IN PROGRESS
 
-<img src="src/assets/ngloadonscroll.png" width="450px" />
+<img src="src/assets/ngloadonscroll.gif" />
+
+##### https://github.com/rintoj/ngx-virtual-scroller
+> npm install ngx-virtual-scroller --save
+
+###TODO:
+1. visualize lib size to see, which lib is small enough

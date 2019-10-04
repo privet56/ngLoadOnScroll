@@ -1,0 +1,24 @@
+<div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
+  <table style="width: 100%;">
+    <tr>
+      <td>
+          <img src="assets/ngloadonscroll.gif" width="64px" style="float:left;">
+      </td>
+      <td>
+          <img src="https://source.unsplash.com/64x64/?face?{{data.index}}" width="64px" style="float:left;">
+      </td>
+      <td style="padding-right: 6px; margin-left: 6px;">
+        <h1> {{data.index}} </h1>
+      </td>
+      <td>
+        <div style="white-space: nowrap">{{data.name}}</div>
+        <div style="white-space: nowrap">{{data.departement}}</div>
+      </td>
+      <td style="width: 100%;text-align: right">
+        <div>
+          <img *ngFor="let i of rnd" src="assets/bun.png?{{data.index}}" width="32px">
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

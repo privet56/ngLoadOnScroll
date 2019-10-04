@@ -14,6 +14,11 @@ import {MatIconModule} from '@angular/material/icon';
 import { NgxVirtScrollComponent } from './ngx-virt-scroll/ngx-virt-scroll.component';
 import { NgxInfiniteScrollComponent } from './ngx-infinite-scroll/ngx-infinite-scroll.component';
 import { NgVForScrollComponent } from './ng-vfor-scroll/ng-vfor-scroll.component';
+import { PrimengScrollComponent } from './primeng-scroll/primeng-scroll.component';
+
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+import { ListEleComponent } from './list-ele/list-ele.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -21,7 +26,10 @@ import { NgVForScrollComponent } from './ng-vfor-scroll/ng-vfor-scroll.component
     AppComponent,
     NgxVirtScrollComponent,
     NgxInfiniteScrollComponent,
-    NgVForScrollComponent
+    NgVForScrollComponent,
+    PrimengScrollComponent,
+    ListEleComponent,
+    WelcomeComponent
   ],
   imports: [
     MatToolbarModule,
@@ -32,6 +40,7 @@ import { NgVForScrollComponent } from './ng-vfor-scroll/ng-vfor-scroll.component
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
+    VirtualScrollerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
