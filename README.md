@@ -15,7 +15,10 @@ WORK IN PROGRESS
 ### Lazy Loaded List Libs:
 
 1.  https://github.com/rintoj/ngx-virtual-scroller
-> npm install ngx-virtual-scroller --save
+    > npm install ngx-virtual-scroller --save
+1. https://github.com/anagram4wander/ng-vfor-lib
+    > npm install ngvforlib --save
+    >  -- after the installation, unpack received tgz, but keep package.json
 
 ### TODO:
 1. visualize lib size to see, which lib is small enough

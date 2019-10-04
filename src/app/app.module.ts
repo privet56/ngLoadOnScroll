@@ -15,11 +15,13 @@ import { NgxVirtScrollComponent } from './ngx-virt-scroll/ngx-virt-scroll.compon
 import { NgxInfiniteScrollComponent } from './ngx-infinite-scroll/ngx-infinite-scroll.component';
 import { NgVForScrollComponent } from './ng-vfor-scroll/ng-vfor-scroll.component';
 import { PrimengScrollComponent } from './primeng-scroll/primeng-scroll.component';
-
-import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { ListEleComponent } from './list-ele/list-ele.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
+// import { NgGUDCoreModule } from 'ng-vfor-lib'; //described on the website
+import { NgGUDCoreModule } from 'ngvforlib';
+
+import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     MatMenuModule,
     MatIconModule,
     VirtualScrollerModule,
+    NgGUDCoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

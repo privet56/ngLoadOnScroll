@@ -24,6 +24,15 @@ export class LotOfDataService
     }
   }
 
+  public fetchAll(): Promise<EleData[]>
+  {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.data);
+      }, 999);
+    });
+  }
+
   public fetchNextChunk(skip: number, limit: number): Promise<EleData[]>
   {
     return new Promise((resolve, reject) => {

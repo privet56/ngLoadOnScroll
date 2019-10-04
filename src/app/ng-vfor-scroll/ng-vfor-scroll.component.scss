@@ -1,0 +1,18 @@
+.data-list-container {
+  height: 100%;
+  flex:1;
+  overflow-y: auto;
+  position: relative;
+  background-color: red;
+}
+
+.data-list-items-container {
+  width: 100%;
+  background-color: green;
+}
+
+.total-height {
+  width: 1px;
+  opacity: 0;
+  background-color: blue;
+}
