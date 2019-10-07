@@ -32,6 +32,10 @@ export class LotOfDataService
       }, 999);
     });
   }
+  public fetchAllImmediately(): EleData[]
+  {
+        return this.data;
+  }
 
   public fetchNextChunk(skip: number, limit: number): Promise<EleData[]>
   {

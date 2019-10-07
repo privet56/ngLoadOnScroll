@@ -12,13 +12,27 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 
 WORK IN PROGRESS
 
-### Lazy Loaded List Libs:
+### Virtual (=lazy-loaded) List Libs:
 
 1.  https://github.com/rintoj/ngx-virtual-scroller
     > npm install ngx-virtual-scroller --save
+    
 1. https://github.com/anagram4wander/ng-vfor-lib
-    > npm install ngvforlib --save
-    >  -- after the installation, unpack received tgz, but keep package.json
+  ```sh
+      npm install ngvforlib --save
+      -- after the installation, unpack received tgz, but keep package.json
+  ```
+  
+1. https://github.com/orizens/ngx-infinite-scroll
 
-### TODO:
+1. https://www.primefaces.org/primeng/#/
+
+### Lib Sizes:
 1. visualize lib size to see, which lib is small enough
+```sh
+  npm install --save-dev webpack-bundle-analyzer
+  npm run build:stats # see package.json 
+  npm run analyze     # see package.json # opens browser with http://127.0.0.1:8888/
+  ```
+
+<img src="src/assets/ngloadonscroll.libsizes.png" width="550px" />

@@ -8,16 +8,22 @@ import {EleData, LotOfDataService} from "../lot-of-data.service";
 })
 export class NgVForScrollComponent implements OnInit
 {
-  protected allData: EleData[] = [];
-  constructor(protected lotOfDataService: LotOfDataService) { }
+  public allData: EleData[] = [];
+  public loading: boolean;
+
+  constructor(protected lotOfDataService: LotOfDataService)
+  {
+
+  }
 
   ngOnInit()
   {
-    this.lotOfDataService.fetchAll().then(allData => {
+    //this.allData = this.lotOfDataService.fetchAllImmediately();
+
+    this.loading = true;
+    this.lotOfDataService.fetchAll().then((allData:EleData[]) => {
       this.allData = allData;
+      this.loading = false;
     });
-  }
-  getSize() : number {
-    return 99;
   }
 }

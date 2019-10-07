@@ -14,8 +14,8 @@ export class NgxVirtScrollComponent implements OnInit
 
   LotOfDataService = LotOfDataService;
 
-  protected buffer: EleData[] = [];
-  protected loading: boolean;
+  public buffer: EleData[] = [];
+  public loading: boolean;
 
   constructor(protected lotOfDataService: LotOfDataService) { }
 
@@ -23,7 +23,7 @@ export class NgxVirtScrollComponent implements OnInit
   {
 
   }
-  protected fetchMore(event: IPageInfo)
+  public fetchMore(event: IPageInfo)
   {
     if (event.endIndex !== this.buffer.length-1)
     {
