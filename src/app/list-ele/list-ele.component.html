@@ -1,5 +1,6 @@
 <div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
-  <table style="width: 100%;">
+  <table style="width: 100%;"
+         [ngStyle]="{'height.px': expanded ? '133' : '', 'background-color': expanded ? '#f5aca6' : ''}">
     <tr>
       <td>
           <img src="assets/ngloadonscroll.gif" width="64px" style="float:left;">
@@ -14,7 +15,7 @@
         <div style="white-space: nowrap">{{data.name}}</div>
         <div style="white-space: nowrap">{{data.departement}}</div>
       </td>
-      <td style="width: 100%;text-align: right">
+      <td style="width: 100%;" class="buns">
         <div (click)="onClickBun()">
           <img *ngFor="let i of clk" src="assets/bun.png?{{data.index}}" width="32px">
         </div>

@@ -25,6 +25,8 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
+import {VirtualScrollerModule as PrimeNGVirtualScrollerModule} from 'primeng/virtualscroller';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +49,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     VirtualScrollerModule,
     NgGUDCoreModule,
     InfiniteScrollModule,
+    PrimeNGVirtualScrollerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

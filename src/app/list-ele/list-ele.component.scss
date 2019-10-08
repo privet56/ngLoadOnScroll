@@ -1,0 +1,15 @@
+.buns {
+  text-align: right;
+  background-color: #dae4f5;
+
+  border-radius: 25px;
+  border: 1px solid #73AD21;
+}
+
+
+@media (max-width: 60em) {
+  .buns {
+    text-align: left;
+    background-color: #e7f5df;
+  }
+}

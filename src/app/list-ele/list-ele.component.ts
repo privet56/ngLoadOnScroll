@@ -26,4 +26,9 @@ export class ListEleComponent implements OnInit
   {
     this.clk.push(this.clk.length);
   }
+  get expanded() : boolean
+  {
+    const b: boolean = this.clk.length > 9;
+    return b;
+  }
 }

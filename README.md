@@ -10,28 +10,36 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 
 <img src="src/assets/ngloadonscroll.gif" />
 
-WORK IN PROGRESS
 
-### Virtual (=lazy-loaded) List Libs:
+## Virtual (=lazy-loaded) List Libs:
 
-1.  https://github.com/rintoj/ngx-virtual-scroller
+### 1.  https://github.com/rintoj/ngx-virtual-scroller
     > npm install ngx-virtual-scroller --save
     
-1. https://github.com/anagram4wander/ng-vfor-lib
+### 2. https://github.com/anagram4wander/ng-vfor-lib
   ```sh
       npm install ngvforlib --save
       -- after the installation, unpack received tgz, but keep package.json
   ```
-  
-   * TODO: check if https://github.com/jamaks/ng-vfor-lib is better.!?
+#### Gotchas
+   * No working npm install package available
+   * TODO: check if the fork https://github.com/jamaks/ng-vfor-lib is better.!?
    * TODO: how to reset ele values on list-ele reuse?
   
-1. https://github.com/orizens/ngx-infinite-scroll
-  > npm install ngx-infinite-scroll --save
+### 3. https://github.com/orizens/ngx-infinite-scroll
+    > npm install ngx-infinite-scroll --save
 
-1. https://www.primefaces.org/primeng/#/
-
-### Lib Sizes:
+### 4. https://www.primefaces.org/primeng/#/
+  ```sh
+  npm install primeng --save
+  npm install primeicons --save
+  ```
+#### Gotchas
+   * TODO: how to reset ele values on list-ele reuse?
+   * TODO: how to handle item height change?
+   * Relative Size (eg. 100%) not possible > manual resize necessary
+  
+## Lib Sizes:
 1. visualize lib size to see, which lib is small enough
 ```sh
   npm install --save-dev webpack-bundle-analyzer

@@ -1,3 +1,23 @@
-<p>
-  https://www.primefaces.org/primeng/#/
-</p>
+<div style="background-color: #faf6eb;position: relative;display: block;overflow: hidden;height: 100%;" #scrollParent (window:resize)="setScrollHeight($event)">
+  <div>
+    https://www.primefaces.org/primeng/#/
+  </div>
+
+  <p-virtualScroller [value]="buffer" [scrollHeight]="scrollHeight" [itemSize]="100" [rows]="30" [cache]="false"
+                     [style]="{'height':'100% !important;'}"
+                     [lazy]="true" (onLazyLoad)="loadItemsLazy($event)" [totalRecords]="totalLazyItemsLength">
+    <!-- p-header>
+      List of Items with https://www.primefaces.org/primeng/#/
+    </p-header -->
+    <ng-template let-item pTemplate="item">
+      <lons-list-ele [data]="item">
+      </lons-list-ele>
+    </ng-template>
+    <ng-template pTemplate="loadingItem">
+      <div class="loader" *ngIf="loading" >
+        <img src="assets/spinner.gif" width="66px;">
+        <br>Loading...
+      </div>
+    </ng-template>
+  </p-virtualScroller>
+</div>
