@@ -1,7 +1,8 @@
 <mat-toolbar>
     <h1>
       <!-- TODO: center & mobile-justified -->
-      ngLoadOnScroll
+      <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
+      &nbsp;ngLoadOnScroll
       &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened" style="float: right">&gt;&gt;</button>
     </h1>
 </mat-toolbar>

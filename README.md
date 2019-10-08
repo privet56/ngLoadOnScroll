@@ -32,7 +32,7 @@ WORK IN PROGRESS
 1. visualize lib size to see, which lib is small enough
 ```sh
   npm install --save-dev webpack-bundle-analyzer
-  npm run build:stats # see package.json 
+  npm run build:stats # see package.json
   npm run analyze     # see package.json # opens browser with http://127.0.0.1:8888/
   ```
 
