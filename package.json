@@ -26,6 +26,7 @@
     "bootstrap-sass": "3.3.7",
     "core-js": "^2.5.4",
     "ngvforlib": "0.0.9",
+    "ngx-infinite-scroll": "^8.0.0",
     "ngx-virtual-scroller": "^3.0.2",
     "rxjs": "6.5.2",
     "tslib": "^1.9.0",

@@ -22,9 +22,11 @@ WORK IN PROGRESS
       npm install ngvforlib --save
       -- after the installation, unpack received tgz, but keep package.json
   ```
-  1. TODO: check if https://github.com/jamaks/ng-vfor-lib is better.!?
+  
+   * TODO: check if https://github.com/jamaks/ng-vfor-lib is better.!?
   
 1. https://github.com/orizens/ngx-infinite-scroll
+  > npm install ngx-infinite-scroll --save
 
 1. https://www.primefaces.org/primeng/#/
 

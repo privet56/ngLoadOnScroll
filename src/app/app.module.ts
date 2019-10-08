@@ -23,6 +23,8 @@ import { NgGUDCoreModule } from 'ngvforlib';
 
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
     MatIconModule,
     VirtualScrollerModule,
     NgGUDCoreModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
