@@ -11,15 +11,19 @@ export class ListEleComponent implements OnInit
   @Input()
   data: EleData;
 
-  rnd: Array<number> = [];
+  clk: Array<number> = [];
 
   constructor() { }
 
   ngOnInit()
   {
     const ix:number = Math.floor(Math.random() * 5);
-    this.rnd = new Array<number>();
+    this.clk = new Array<number>();
     for(let i:number = 0; i < ix;i++)
-      this.rnd.push(i);
+      this.clk.push(i);
+  }
+  onClickBun() : void
+  {
+    this.clk.push(this.clk.length);
   }
 }

@@ -15,8 +15,8 @@
         <div style="white-space: nowrap">{{data.departement}}</div>
       </td>
       <td style="width: 100%;text-align: right">
-        <div>
-          <img *ngFor="let i of rnd" src="assets/bun.png?{{data.index}}" width="32px">
+        <div (click)="onClickBun()">
+          <img *ngFor="let i of clk" src="assets/bun.png?{{data.index}}" width="32px">
         </div>
       </td>
     </tr>

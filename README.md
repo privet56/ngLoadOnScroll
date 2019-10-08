@@ -24,6 +24,7 @@ WORK IN PROGRESS
   ```
   
    * TODO: check if https://github.com/jamaks/ng-vfor-lib is better.!?
+   * TODO: how to reset ele values on list-ele reuse?
   
 1. https://github.com/orizens/ngx-infinite-scroll
   > npm install ngx-infinite-scroll --save
