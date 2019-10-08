@@ -26,6 +26,8 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import {VirtualScrollerModule as PrimeNGVirtualScrollerModule} from 'primeng/virtualscroller';
+import {DataViewModule} from 'primeng/dataview';
+import { PrimengdataviewScrollComponent } from './primengdataview-scroll/primengdataview-scroll.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {VirtualScrollerModule as PrimeNGVirtualScrollerModule} from 'primeng/vir
     NgVForScrollComponent,
     PrimengScrollComponent,
     ListEleComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PrimengdataviewScrollComponent
   ],
   imports: [
     MatToolbarModule,
@@ -50,6 +53,7 @@ import {VirtualScrollerModule as PrimeNGVirtualScrollerModule} from 'primeng/vir
     NgGUDCoreModule,
     InfiniteScrollModule,
     PrimeNGVirtualScrollerModule,
+    DataViewModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

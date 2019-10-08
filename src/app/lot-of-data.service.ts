@@ -2,7 +2,14 @@ import { Injectable } from '@angular/core';
 
 export class EleData
 {
-  constructor(public index:number, public name: string, public departement: string) { }
+  buns: Array<number> = [];
+  constructor(public index:number, public name: string, public departement: string)
+  {
+    const ix:number = Math.floor(Math.random() * 5);
+    this.buns = new Array<number>();
+    for(let i:number = 0; i < ix;i++)
+      this.buns.push(i);
+  }
 }
 
 @Injectable({
@@ -10,7 +17,7 @@ export class EleData
 })
 export class LotOfDataService
 {
-  public static readonly ELEDATA_SIZE = 9999;
+  public static readonly ELEDATA_SIZE = 9999 * 2;
   static readonly NAMES: Array<string> = ["Angela Merkel", "Olaf Scholz", "Horst Seehofer", "Heiko Maas", "Peter Altmaier", "Christine Lambrecht", "Hubertus Heil", "Annegret Kramp-Karrenbauer", "Julia Klöckner", "Franziska Giffey", "Jens Spahn", "Andreas Scheuer", "Svenja Schulze", "Anja Karliczek", "Gerd Müller", "Helge Braun"];
   static readonly DEPARTMENT: Array<string> = ["Bundesministerium für Arbeit und Soziales", "Bundesministerium für Wirtschaft und Energie", "Bundesministerium des Auswärtigen", "Bundesministerium des Innern, für Bau und Heimat", "Bundesministerium für Ernährung und Landwirtschaft"];
 

@@ -9,7 +9,7 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 ```
 
 <img src="src/assets/ngloadonscroll.gif" />
-
+<img src="src/assets/ngloadonscroll.mobile.gif" />
 
 ## Virtual (=lazy-loaded) List Libs:
 
@@ -22,9 +22,8 @@ ng serve --host 0.0.0.0 --disableHostCheck true
       -- after the installation, unpack received tgz, but keep package.json
   ```
 #### Gotchas
-   * No working npm install package available
+   * **No working npm install package available!**
    * TODO: check if the fork https://github.com/jamaks/ng-vfor-lib is better.!?
-   * TODO: how to reset ele values on list-ele reuse?
   
 ### 3. https://github.com/orizens/ngx-infinite-scroll
     > npm install ngx-infinite-scroll --save
@@ -35,9 +34,16 @@ ng serve --host 0.0.0.0 --disableHostCheck true
   npm install primeicons --save
   ```
 #### Gotchas
-   * TODO: how to reset ele values on list-ele reuse?
-   * TODO: how to handle item height change?
-   * Relative Size (eg. 100%) not possible > manual resize necessary
+   * VirtualScroller: cannot handle item height change!
+   * VirtualScroller: relative Size (eg. 100%) not possible =>
+      <a href="src/app/primeng-scroll/primeng-scroll.component.ts">manual resize necessary</a>
+   * CSS size is large (PrimeNG makes more sense, when using several components)
+#### Cool
+   * DataView is auto-sized, so, no manual styling necessary
+
+## Q&A
+   * Q: How to reset list-element state on list-ele reuse?
+      * A: override @Input setter and reset internal state in it! 
   
 ## Lib Sizes:
 1. visualize lib size to see, which lib is small enough

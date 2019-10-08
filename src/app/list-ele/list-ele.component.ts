@@ -8,27 +8,37 @@ import {EleData} from "../lot-of-data.service";
 })
 export class ListEleComponent implements OnInit
 {
-  @Input()
-  data: EleData;
-
-  clk: Array<number> = [];
+  buns: Array<number> = null;
+  _data: EleData = null;
 
   constructor() { }
 
   ngOnInit()
   {
+
+  }
+  protected _initLocalState()
+  { /*
     const ix:number = Math.floor(Math.random() * 5);
-    this.clk = new Array<number>();
+    this.buns = new Array<number>();
     for(let i:number = 0; i < ix;i++)
-      this.clk.push(i);
+      this.buns.push(i);
+    */
   }
   onClickBun() : void
   {
-    this.clk.push(this.clk.length);
+    this.buns.push(this.buns.length);
   }
   get expanded() : boolean
   {
-    const b: boolean = this.clk.length > 9;
+    const b: boolean = this.buns.length > 9;
     return b;
+  }
+  @Input('data')
+  set data(data: EleData)
+  {
+    this._data = data;
+    this.buns = this._data.buns;
+    this._initLocalState();
   }
 }

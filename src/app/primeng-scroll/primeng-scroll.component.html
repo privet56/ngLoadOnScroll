@@ -1,8 +1,7 @@
 <div style="background-color: #faf6eb;position: relative;display: block;overflow: hidden;height: 100%;" #scrollParent (window:resize)="setScrollHeight($event)">
   <div>
-    https://www.primefaces.org/primeng/#/
+    https://www.primefaces.org/primeng/#/virtualscroller
   </div>
-
   <p-virtualScroller [value]="buffer" [scrollHeight]="scrollHeight" [itemSize]="100" [rows]="30" [cache]="false"
                      [style]="{'height':'100% !important;'}"
                      [lazy]="true" (onLazyLoad)="loadItemsLazy($event)" [totalRecords]="totalLazyItemsLength">

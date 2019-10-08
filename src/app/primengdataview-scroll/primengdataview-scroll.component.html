@@ -1,0 +1,39 @@
+<div style="background-color:#faf6eb;">
+  <div>
+    https://www.primefaces.org/primeng/#/dataview
+  </div>
+
+  <p-dataView [value]="buffer" [paginator]="true" [rows]="30" #dataView paginatorPosition="both"
+              (onPage)="loadItemsLazy($event)"
+              [lazy]="true"  [totalRecords]="totalLazyItemsLength">
+
+    <p-header>
+      <div class="ui-helper-clearfix">
+        <div class="ui-g">
+          <div class="ui-g-12 ui-md-4">
+            {{ LotOfDataService.ELEDATA_SIZE }} Elements in sum.
+          </div>
+          <div class="ui-g-6 ui-md-4 filter-container">
+            <div style="position:relative">
+              <span *ngIf="!loading">{{ buffer.length }} Elements loaded.</span>
+              <span class="load-er" *ngIf="loading"><img src="assets/spinner.gif" width="33px;"> Loading...</span>
+            </div>
+          </div>
+          <div class="ui-g-6 ui-md-4" style="text-align:right">
+            <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+          </div>
+        </div>
+      </div>
+    </p-header>
+
+    <ng-template let-item pTemplate="listItem">
+      <lons-list-ele [data]="item" style="width:100%;">
+      </lons-list-ele>
+    </ng-template>
+    <ng-template let-item pTemplate="gridItem">
+      <lons-list-ele [data]="item" style="max-width:50%;">
+      </lons-list-ele>
+    </ng-template>
+
+  </p-dataView>
+</div>

@@ -1,9 +1,22 @@
 <mat-toolbar>
     <h1>
       <!-- TODO: center & mobile-justified -->
-      <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
-      &nbsp;ngLoadOnScroll
-      &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened" style="float: right">&gt;&gt;</button>
+      <table>
+        <tr>
+          <td>
+            <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon" style="margin-top:6px;">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
+          </td>
+          <td>
+            &nbsp;ngLoadOnScroll
+          </td>
+          <td>
+              <img src="assets/fast_rabbit.gif" style="width:66px;margin-top:-13px;margin-left:11px;">
+          </td>
+          <td>
+          &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened" style="float: right">&gt;&gt;</button>
+          </td>
+        </tr>
+      </table>
     </h1>
 </mat-toolbar>
 
@@ -32,7 +45,10 @@
       ngVForScroll
     </button><br>
     <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNG']" [queryParams]="{primeNG: true}">
-      PrimeNG
+      pNGVirtualScroll
+    </button><br>
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNGDataView']" [queryParams]="{primeNGDataView: true}">
+      pNGDataView
     </button>
 
   </mat-sidenav>

@@ -36,12 +36,12 @@ export class PrimengScrollComponent implements OnInit, AfterViewInit
     const start: number = $event && $event.first ? $event.first : this.buffer.length;
     const limit: number = $event && $event.rows ? $event.rows : 10;
 
-    // console.log("loadItemsLazy: start:"+start+" limit:"+limit);
+    console.log("PrimengScrollComponent:loadItemsLazy: start:"+start+" limit:"+limit);
 
     this.loading = true;
-    this.lotOfDataService.fetchNextChunk(start, limit).then(chunk => {
+    this.lotOfDataService.fetchNextChunk(start, limit).then((chunk:EleData[]) => {
 
-      this.buffer = chunk;
+      this.buffer = chunk.slice(start);
       this.loading = false;
       //console.log("loadItemsLazy: start:"+start+" limit:"+limit+" DONE. #buffer:"+this.buffer.length);
 
