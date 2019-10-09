@@ -8,7 +8,26 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <lons-root></lons-root>
+  <lons-root>
+    <style>
+      .wait
+      {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 188px;
+        margin:-99px 0 0 -99px;/*50% of width */
+        -webkit-animation:spin 2s linear infinite;
+        -moz-animation:spin 2s linear infinite;
+        animation:spin 2s linear infinite;
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    </style>
+    <table width="100%"><tr><td style="text-align: center"><img src="assets/spinner.gif" width="333px;" class="wait"></td></tr></table>
+  </lons-root>
 </body>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"><!-- <mat-icon aria-label="home icon">home</mat-icon> -->
 </html>
