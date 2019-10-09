@@ -18,8 +18,8 @@ import { PrimengScrollComponent } from './primeng-scroll/primeng-scroll.componen
 import { ListEleComponent } from './list-ele/list-ele.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
-// import { NgGUDCoreModule } from 'ng-vfor-lib'; //described on the website
-import { NgGUDCoreModule } from 'ngvforlib';
+import {NgGUDCoreModule} from 'ng-vfor-lib'; //described on the website
+//import { NgGUDCoreModule as n } from 'ngvforlib';
 
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 

@@ -25,7 +25,7 @@
     "@angular/router": "8.2.0",
     "bootstrap-sass": "3.3.7",
     "core-js": "^2.5.4",
-    "ngvforlib": "0.0.9",
+    "ng-vfor-lib": "file:src/lib/ng-vfor-lib-0.0.9.tgz",
     "ngx-infinite-scroll": "^8.0.0",
     "ngx-virtual-scroller": "^3.0.2",
     "primeicons": "^2.0.0",
@@ -33,6 +33,13 @@
     "rxjs": "6.5.2",
     "tslib": "^1.9.0",
     "zone.js": "0.8.26"
+  },
+  "dependencies_not_working_as_expected": {
+    "a-ngvforlib": "0.0.9",
+    "b-ngvforlib": "src/lib/ng-vfor-lib-0.0.9.tgz",
+    "c-ngvforlib": "git+ssh://git@github.com:anagram4wander/ng-vfor-lib.git",
+    "d-ngvforlib": "anagram4wander/ng-vfor-lib",
+    "e-ngvforlib": "file:src/lib/ng-vfor-lib-0.0.9.tgz"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.802.0",
