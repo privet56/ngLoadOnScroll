@@ -43,7 +43,8 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 
 ## Q&A
    * Q: How to reset list-element state on list-ele reuse?
-      * A: override @Input setter and reset internal state in it!
+      * A: override <a href="src/app/list-ele/list-ele.component.ts">@Input setter</a> and reset internal state in it!
+      
    * Q: ChangeDetectorRef.detectChanges sometimes fails & throws an exception
       * A: Don't worry, it can happen when list elements are **reused**; old/invalid elements cannot be (and don't need to be) re-rendered.  
   
