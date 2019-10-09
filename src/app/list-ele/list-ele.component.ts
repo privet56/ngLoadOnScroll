@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {EleData} from "../lot-of-data.service";
+import {StyleService} from "../style.service";
 
 @Component({
   selector: 'lons-list-ele',
@@ -8,14 +9,19 @@ import {EleData} from "../lot-of-data.service";
 })
 export class ListEleComponent implements OnInit
 {
-  buns: Array<number> = null;
+  buns: Array<number> = new Array<number>();
   _data: EleData = null;
+  public isMobile: boolean = false;
 
-  constructor() { }
+  constructor(public styleService: StyleService, public changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngOnInit()
   {
-
+    this.styleService.mobileChanged$.subscribe((isMobile:boolean) => {
+      this.isMobile = isMobile;
+      StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
+    });
   }
   protected _initLocalState()
   { /*
@@ -28,9 +34,13 @@ export class ListEleComponent implements OnInit
   onClickBun() : void
   {
     this.buns.push(this.buns.length);
+    StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
   }
   get expanded() : boolean
   {
+    if(!this.buns) {
+      return false;
+    }
     const b: boolean = this.buns.length > 9;
     return b;
   }

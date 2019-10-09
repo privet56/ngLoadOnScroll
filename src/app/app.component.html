@@ -30,7 +30,7 @@
 <!-- navi: version 2 -->
 <mat-sidenav-container class="conti" *ngIf="true" (backdropClick)="closeSideNav()" >
   <!-- TODO: make resizable -->
-  <mat-sidenav opened mode="side" [class.is-mobile]="mobileQuery.matches" #sidenav (keydown.escape)="closeSideNav()" disableClose>
+  <mat-sidenav opened mode="side" [class.is-mobile]="this.styleService.mobileChanged$ | async" #sidenav (keydown.escape)="closeSideNav()" disableClose>
     <br>
     <button mat-raised-button (click)="closeSideNav()">&lt;&lt;</button>
     <br><br>

@@ -1,6 +1,9 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {EleData, LotOfDataService} from "../lot-of-data.service";
 import {LazyLoadEvent} from "primeng/api";
+import {StyleService} from "../style.service";
+import {Observable} from "rxjs";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'lons-primeng-scroll',
@@ -16,7 +19,7 @@ export class PrimengScrollComponent implements OnInit, AfterViewInit
   public buffer: EleData[] = [];
   public loading: boolean;
 
-  constructor(protected lotOfDataService: LotOfDataService) { }
+  constructor(protected lotOfDataService: LotOfDataService, public styleService: StyleService) { }
 
   ngOnInit()
   {
@@ -36,7 +39,7 @@ export class PrimengScrollComponent implements OnInit, AfterViewInit
     const start: number = $event && $event.first ? $event.first : this.buffer.length;
     const limit: number = $event && $event.rows ? $event.rows : 10;
 
-    console.log("PrimengScrollComponent:loadItemsLazy: start:"+start+" limit:"+limit);
+    //console.log("PrimengScrollComponent:loadItemsLazy: start:"+start+" limit:"+limit);
 
     this.loading = true;
     this.lotOfDataService.fetchNextChunk(start, limit).then((chunk:EleData[]) => {
@@ -63,5 +66,9 @@ export class PrimengScrollComponent implements OnInit, AfterViewInit
     //let h = (<HTMLElement>this.scrollParent.nativeElement).getBoundingClientRect().height - 70; //same as above
     //console.log("h="+h+" <> "+$event.target.innerHeight);
     this.scrollHeight = h + "px";
+  }
+
+  public getItemSize() : Observable<number> {
+    return this.styleService.mobileChanged$.pipe(map((isMobile:boolean) => isMobile ? 150 : 100));
   }
 }

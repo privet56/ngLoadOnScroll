@@ -30,7 +30,7 @@ export class PrimengdataviewScrollComponent implements OnInit
     const start: number = $event && ($event.first !== undefined) ? $event.first : this.buffer.length;
     const limit: number = $event && $event.rows ? $event.rows : 10;
 
-    console.log("loadItemsLazy: start:"+start+" limit:"+limit);
+    //console.log("loadItemsLazy: start:"+start+" limit:"+limit);
 
     this.loading = true;
     this.lotOfDataService.fetchNextChunk(start, limit).then((chunk:EleData[]) => {

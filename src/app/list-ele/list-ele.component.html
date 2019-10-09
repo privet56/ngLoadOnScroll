@@ -15,7 +15,14 @@
         <div style="white-space: nowrap">{{_data.name}}</div>
         <div style="white-space: nowrap">{{_data.departement}}</div>
       </td>
-      <td style="width: 100%;" class="buns">
+      <td style="width: 100%;" class="buns" [style.display]="!isMobile ? 'table-cell' : 'none'">
+        <div (click)="onClickBun()">
+          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="9" style="width: 100%;" class="buns" [style.display]="isMobile ? '' : 'none'">
         <div (click)="onClickBun()">
           <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
         </div>

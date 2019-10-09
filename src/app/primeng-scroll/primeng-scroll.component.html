@@ -2,7 +2,7 @@
   <div>
     https://www.primefaces.org/primeng/#/virtualscroller
   </div>
-  <p-virtualScroller [value]="buffer" [scrollHeight]="scrollHeight" [itemSize]="100" [rows]="30" [cache]="false"
+  <p-virtualScroller [value]="buffer" [scrollHeight]="scrollHeight" [itemSize]="getItemSize() | async" [rows]="30" [cache]="false"
                      [style]="{'height':'100% !important;'}"
                      [lazy]="true" (onLazyLoad)="loadItemsLazy($event)" [totalRecords]="totalLazyItemsLength">
     <!-- p-header>
