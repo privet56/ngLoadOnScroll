@@ -1,6 +1,5 @@
 <!-- div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'" -->
-  <table style="width:100%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;"
-         [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'"
+  <table style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;"
          [ngStyle]="{'height.px': expanded ? '133' : '', 'background-color': expanded ? '#f5aca6' : ''}">
     <tr>
       <td>
@@ -12,7 +11,7 @@
       <td style="padding-right: 6px; margin-left: 6px;">
         <h1> {{_data.index}} </h1>
       </td>
-      <td style="text-align: left;">
+      <td style="text-align: left;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
         <div style="white-space:nowrap;">{{_data.name}}</div>
         <div style="white-space:nowrap;">{{_data.departement}}</div>
       </td>
