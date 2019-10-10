@@ -15,18 +15,32 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 
 ### 1.  https://github.com/rintoj/ngx-virtual-scroller
     > npm install ngx-virtual-scroller --save
+##### Coolness:
+  * It just works.
+  * You don't need to know the **number** of list-elements
     
 ### 2. https://github.com/anagram4wander/ng-vfor-lib
   ```sh
       npm install ngvforlib --save
       -- after the installation, unpack received tgz, but keep package.json
+      better: download .tgz and install from local path =>
+      "ng-vfor-lib": "file:src/lib/ng-vfor-lib-0.0.9.tgz",
   ```
 #### Gotchas
    * **No working npm install package available!**
    * TODO: check if the fork https://github.com/jamaks/ng-vfor-lib is better.!?
+   
+##### Coolness:
+  * set the whole list once, rendering is done by the lib 
   
 ### 3. https://github.com/orizens/ngx-infinite-scroll
     > npm install ngx-infinite-scroll --save
+#### Gotchas    
+  * You need to know the **number** of list-elements
+
+##### Coolness:
+  * It just works.
+  * is the smallest alternative (see below pic)
 
 ### 4. https://www.primefaces.org/primeng/#/
   ```sh
@@ -38,8 +52,9 @@ ng serve --host 0.0.0.0 --disableHostCheck true
    * VirtualScroller: relative Size (eg. 100%) not possible =>
       <a href="src/app/primeng-scroll/primeng-scroll.component.ts">manual resize necessary</a>
    * CSS size is large (PrimeNG makes more sense, when using several components)
-#### Cool
+##### Coolness
    * DataView is auto-sized, so, no manual styling necessary
+   * the lib offers a lot of highly configurable components
 
 ## Q&A
    * Q: How to reset list-element state on list-ele reuse?

@@ -1,7 +1,6 @@
 <mat-toolbar>
-    <h1>
       <!-- TODO: center & mobile-justified -->
-      <table>
+      <table style="width:100%">
         <tr>
           <td>
             <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon" style="margin-top:6px;">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
@@ -13,11 +12,16 @@
               <img src="assets/fast_rabbit.gif" style="width:66px;margin-top:-13px;margin-left:11px;">
           </td>
           <td>
-          &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened" style="float: right">&gt;&gt;</button>
+          &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened">&gt;&gt;</button>
           </td>
+          <td style="width:100%;text-align:right;font-size:11px;">You are in the
+            <span style="color: red;" *ngIf="this.styleService.mobileChanged$ | async">Mobile  </span>
+            <span style="color: blue;" *ngIf="!(this.styleService.mobileChanged$ | async)">Desktop </span>
+            View.
+          </td>
+
         </tr>
       </table>
-    </h1>
 </mat-toolbar>
 
 <!-- navi: version 1 -->

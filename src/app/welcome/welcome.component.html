@@ -1,10 +1,22 @@
 <div style="text-align: center;vertical-align: middle;padding: 33px;margin:33px;margin-top:0px;padding-top:0px;">
+
   <h1>
     <img src="assets/fast_rabbit.gif" style="width:266px;"><br>
     <br>
     Finding the fastest lazy loaded (virtual) Angular List Library...
-    <p>
-    <img src="assets/ngloadonscroll.gif" style="height:399px;margin: 9px;">
-    <img src="assets/ngloadonscroll.mobile.gif" style="height:399px;margin: 9px;">
   </h1>
+  <div>(There are {{LotOfDataService.ELEDATA_SIZE}} Elements to be listed)</div>
+  <img src="assets/ngloadonscroll.gif" style="height:399px;margin: 9px;">
+  <img src="assets/ngloadonscroll.mobile.gif" style="height:399px;margin: 9px;">
+
+  <h3 style="width:100%;text-align: left">This is how an element looks:</h3>
+  <lons-list-ele [data]="item">
+  </lons-list-ele>
+
+  <h3>You are in the
+    <span style="color: red;" *ngIf="this.styleService.mobileChanged$ | async">Mobile  </span>
+    <span style="color: blue;" *ngIf="!(this.styleService.mobileChanged$ | async)">Desktop </span>
+    View.
+  </h3>
+
 </div>

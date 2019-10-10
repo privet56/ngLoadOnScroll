@@ -1,5 +1,6 @@
-<div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
-  <table style="width: 100%;"
+<!-- div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'" -->
+  <table style="width:100%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;"
+         [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'"
          [ngStyle]="{'height.px': expanded ? '133' : '', 'background-color': expanded ? '#f5aca6' : ''}">
     <tr>
       <td>
@@ -11,22 +12,22 @@
       <td style="padding-right: 6px; margin-left: 6px;">
         <h1> {{_data.index}} </h1>
       </td>
-      <td>
-        <div style="white-space: nowrap">{{_data.name}}</div>
-        <div style="white-space: nowrap">{{_data.departement}}</div>
+      <td style="text-align: left;">
+        <div style="white-space:nowrap;">{{_data.name}}</div>
+        <div style="white-space:nowrap;">{{_data.departement}}</div>
       </td>
-      <td style="width: 100%;" class="buns" [style.display]="!isMobile ? 'table-cell' : 'none'">
-        <div (click)="onClickBun()">
+      <td style="width: 100%;min-width:133px;" class="buns" [style.display]="!isMobile ? 'table-cell' : 'none'">
+        <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
           <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
         </div>
       </td>
     </tr>
     <tr>
       <td colspan="9" style="width: 100%;" class="buns" [style.display]="isMobile ? '' : 'none'">
-        <div (click)="onClickBun()">
+        <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
           <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
         </div>
       </td>
     </tr>
   </table>
-</div>
+<!-- /div -->
