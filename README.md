@@ -8,9 +8,7 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 # open browser with http://localhost:4200/
 ```
 
-<img src="src/assets/ngloadonscroll.gif" height="250" title="on Desktop and on Mobile Device" />
-<img src="src/assets/ngloadonscroll.mobile.gif" height="250" title="Performance on the Android Emulator" />
-<img src="src/assets/ngloadonscroll.mobile.detection.gif" height="250" title="Switch between mobile and desktop view" />
+<img src="src/assets/ngloadonscroll.gif" height="250" title="on Desktop and on Mobile Device" /><img src="src/assets/ngloadonscroll.mobile.gif" height="250" title="Performance on the Android Emulator" /><img src="src/assets/ngloadonscroll.mobile.detection.gif" height="250" title="Switch between mobile and desktop view" />
 
 ## Virtual (=lazy-loaded) List Libs:
 
