@@ -9,7 +9,7 @@
           <img src="https://source.unsplash.com/64x64/?face?{{_data.index}}" width="64px" style="float:left;">
       </td>
       <td style="padding-right: 6px; margin-left: 6px;">
-        <h1> {{_data.index}} </h1>
+        <h1 title="This is element Nr. {{_data.index}}"> {{_data.index}} </h1>
       </td>
       <td style="text-align: left;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
         <div style="white-space:nowrap;">{{_data.name}}</div>
@@ -17,14 +17,14 @@
       </td>
       <td style="width: 100%;min-width:133px;" class="buns" [style.display]="!isMobile ? 'table-cell' : 'none'">
         <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
-          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
+          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px" title="Click to increase" style="cursor: pointer;">
         </div>
       </td>
     </tr>
     <tr>
       <td colspan="9" style="width: 100%;" class="buns" [style.display]="isMobile ? '' : 'none'">
         <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
-          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px">
+          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px" title="Click to increase" style="cursor: pointer;">
         </div>
       </td>
     </tr>

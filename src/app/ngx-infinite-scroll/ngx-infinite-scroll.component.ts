@@ -20,7 +20,7 @@ export class NgxInfiniteScrollComponent implements OnInit
   onScroll($event)
   {
     this.loading = true;
-    this.lotOfDataService.fetchNextChunk(this.buffer.length, 10).then(chunk => {
+    this.lotOfDataService.fetchNextChunk(this.buffer.length, 20).then(chunk => {
 
       this.buffer = chunk;
       this.loading = false;

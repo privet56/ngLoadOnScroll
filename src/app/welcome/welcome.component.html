@@ -1,13 +1,14 @@
 <div style="text-align: center;vertical-align: middle;padding: 33px;margin:33px;margin-top:0px;padding-top:0px;">
 
   <h1>
-    <img src="assets/fast_rabbit.gif" style="width:266px;"><br>
+    <img src="assets/fast_rabbit.gif" style="width:266px;" title="Which very long-long list render method has the best performance?"><br>
     <br>
     Finding the fastest lazy loaded (virtual) Angular List Library...
   </h1>
-  <div>(There are {{LotOfDataService.ELEDATA_SIZE}} Elements to be listed)</div>
-  <img src="assets/ngloadonscroll.gif" style="height:399px;margin: 9px;">
-  <img src="assets/ngloadonscroll.mobile.gif" style="height:399px;margin: 9px;">
+  <div>(There are <span style="color: red;"><strong>{{LotOfDataService.ELEDATA_SIZE}}</strong></span> Elements to be listed)</div>
+  <img src="assets/ngloadonscroll.gif" style="height:299px;margin: 9px;" title="on Desktop and on Mobile Device">
+  <img src="assets/ngloadonscroll.mobile.gif" style="height:299px;margin: 9px;" title="Performance on the Android Emulator">
+  <img src="assets/ngloadonscroll.mobile.detection.gif" style="height:299px;margin: 9px;" title="Switch between mobile and desktop view">
 
   <h3 style="width:100%;text-align: left">This is how an element looks:</h3>
   <lons-list-ele [data]="item">

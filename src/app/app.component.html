@@ -3,20 +3,20 @@
       <table style="width:100%">
         <tr>
           <td>
-            <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon" style="margin-top:6px;">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
+            <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon" style="margin-top:6px;" title="Home / Welcome screen">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
           </td>
           <td>
-            &nbsp;ngLoadOnScroll
+            <h1>&nbsp;ngLoadOnScroll</h1>
           </td>
           <td>
-              <img src="assets/fast_rabbit.gif" style="width:66px;margin-top:-13px;margin-left:11px;">
+              <img src="assets/fast_rabbit.gif" style="width:66px;margin-top:-13px;margin-left:11px;" title="Which very long-long list render method has the best performance?">
           </td>
           <td>
           &nbsp;&nbsp;<button mat-button (click)="sideNavOpen()" *ngIf="!sideNavIsOpened">&gt;&gt;</button>
           </td>
           <td style="width:100%;text-align:right;font-size:11px;">You are in the
-            <span style="color: red;" *ngIf="this.styleService.mobileChanged$ | async">Mobile  </span>
-            <span style="color: blue;" *ngIf="!(this.styleService.mobileChanged$ | async)">Desktop </span>
+            <span style="color: red;text-decoration: underline;" *ngIf="this.styleService.mobileChanged$ | async">Mobile  </span>
+            <span style="color: blue;;text-decoration: underline;" *ngIf="!(this.styleService.mobileChanged$ | async)">Desktop </span>
             View.
           </td>
 
@@ -36,22 +36,22 @@
   <!-- TODO: make resizable -->
   <mat-sidenav opened mode="side" [class.is-mobile]="this.styleService.mobileChanged$ | async" #sidenav (keydown.escape)="closeSideNav()" disableClose>
     <br>
-    <button mat-raised-button (click)="closeSideNav()">&lt;&lt;</button>
+    <button mat-raised-button (click)="closeSideNav()" title="Close this Side-Navigator">&lt;&lt;</button>
     <br><br>
 
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxVirtScroll']" [queryParams]="{ngxVirtScroll: true}">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxVirtScroll']" [queryParams]="{ngxVirtScroll: true}" title="List implementation with the ngxVirtScroll library">
       ngxVirtScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxInfiniteScroll']" [queryParams]="{ngxInfiniteScroll: true}">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxInfiniteScroll']" [queryParams]="{ngxInfiniteScroll: true}" title="List implementation with the ngxInfiniteScroll library">
       ngxInfiniteScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngVForScroll']" [queryParams]="{ngVForScroll: true}">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngVForScroll']" [queryParams]="{ngVForScroll: true}" title="List implementation with the ngVForScroll library">
       ngVForScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNG']" [queryParams]="{primeNG: true}">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNG']" [queryParams]="{primeNG: true}" title="List implementation with the PrimeNG VirtualScroll library">
       pNGVirtualScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNGDataView']" [queryParams]="{primeNGDataView: true}">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNGDataView']" [queryParams]="{primeNGDataView: true}" title="List implementation with the PrimeNG DataView library">
       pNGDataView
     </button>
 
