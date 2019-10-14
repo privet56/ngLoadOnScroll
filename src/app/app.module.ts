@@ -28,6 +28,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import {VirtualScrollerModule as PrimeNGVirtualScrollerModule} from 'primeng/virtualscroller';
 import {DataViewModule} from 'primeng/dataview';
 import { PrimengdataviewScrollComponent } from './primengdataview-scroll/primengdataview-scroll.component';
+import {TooltipModule} from 'primeng/tooltip';
+import {LightboxModule} from 'primeng/lightbox';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -54,6 +57,9 @@ import { PrimengdataviewScrollComponent } from './primengdataview-scroll/primeng
     InfiniteScrollModule,
     PrimeNGVirtualScrollerModule,
     DataViewModule,
+    TooltipModule,
+    LightboxModule,
+    OverlayPanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

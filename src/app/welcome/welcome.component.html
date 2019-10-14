@@ -5,12 +5,24 @@
     <br>
     Finding the fastest lazy loaded (virtual) Angular List Library...
   </h1>
-  <div>(There are <span style="color: red;"><strong>{{LotOfDataService.ELEDATA_SIZE}}</strong></span> Elements to be listed)</div>
-  <img src="assets/ngloadonscroll.gif" style="height:299px;margin: 9px;" title="on Desktop and on Mobile Device">
-  <img src="assets/ngloadonscroll.mobile.gif" style="height:299px;margin: 9px;" title="Performance on the Android Emulator">
-  <img src="assets/ngloadonscroll.mobile.detection.gif" style="height:299px;margin: 9px;" title="Switch between mobile and desktop view">
+  <div>(There are <span style="color: red;" pTooltip="<font style='color:orange;'><strong> {{LotOfDataService.ELEDATA_SIZE}} Elements!!! </strong></font>" [escape]="false"><strong>{{LotOfDataService.ELEDATA_SIZE}}</strong></span> Elements to be listed)</div>
 
-  <h3 style="width:100%;text-align: left">This is how an element looks:</h3>
+  <img src="assets/ngloadonscroll.gif" style="height:299px;margin:9px;cursor: pointer;" title="on Desktop and on Mobile Device" (click)="op1.toggle($event)">
+  <p-overlayPanel #op1 [dismissable]="true" [showCloseIcon]="true" [showTransitionOptions]="'333ms'" [hideTransitionOptions]="'333ms'">
+    <img src="assets/ngloadonscroll.gif" pTooltip="on Desktop and on Mobile Device">
+  </p-overlayPanel>
+
+  <img src="assets/ngloadonscroll.mobile.gif" style="height:299px;margin:9px;cursor: pointer;" pTooltip="Performance on the Android Emulator" (click)="op2.toggle($event)">
+  <p-overlayPanel #op2 [dismissable]="true" [showCloseIcon]="true" [showTransitionOptions]="'333ms'" [hideTransitionOptions]="'333ms'">
+    <img src="assets/ngloadonscroll.mobile.gif" title="Performance on the Android Emulator">
+  </p-overlayPanel>
+
+  <img src="assets/ngloadonscroll.mobile.detection.gif" style="height:299px;margin:9px;cursor: pointer;" title="Switch between mobile and desktop view" (click)="op3.toggle($event)">
+  <p-overlayPanel #op3 [dismissable]="true" [showCloseIcon]="true" [showTransitionOptions]="'333ms'" [hideTransitionOptions]="'333ms'">
+    <img src="assets/ngloadonscroll.mobile.detection.gif" pTooltip="Switch between mobile and desktop view">
+  </p-overlayPanel>
+
+  <h3 style="width:100%;text-align: left" pTooltip="This is how an element looks:">This is how an element looks:</h3>
   <lons-list-ele [data]="item">
   </lons-list-ele>
 

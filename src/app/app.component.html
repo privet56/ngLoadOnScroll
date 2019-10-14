@@ -6,7 +6,7 @@
             <a href="" [routerLink]="['/']"><mat-icon aria-label="home icon" style="margin-top:6px;" title="Home / Welcome screen">home</mat-icon></a><!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet"> -->
           </td>
           <td>
-            <h1>&nbsp;ngLoadOnScroll</h1>
+            <h1 pTooltip="ngLoadOnScroll">&nbsp;ngLoadOnScroll</h1>
           </td>
           <td>
               <img src="assets/fast_rabbit.gif" style="width:66px;margin-top:-13px;margin-left:11px;" title="Which very long-long list render method has the best performance?">
@@ -39,19 +39,19 @@
     <button mat-raised-button (click)="closeSideNav()" title="Close this Side-Navigator">&lt;&lt;</button>
     <br><br>
 
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxVirtScroll']" [queryParams]="{ngxVirtScroll: true}" title="List implementation with the ngxVirtScroll library">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxVirtScroll']" [queryParams]="{ngxVirtScroll: true}" pTooltip="List implementation with the <strong style='color:red;'>ngxVirtScroll</strong> library" [escape]="false">
       ngxVirtScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxInfiniteScroll']" [queryParams]="{ngxInfiniteScroll: true}" title="List implementation with the ngxInfiniteScroll library">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngxInfiniteScroll']" [queryParams]="{ngxInfiniteScroll: true}" pTooltip="List implementation with the <strong style='color:red;'>ngxInfiniteScroll</strong> library" [escape]="false">
       ngxInfiniteScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngVForScroll']" [queryParams]="{ngVForScroll: true}" title="List implementation with the ngVForScroll library">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/ngVForScroll']" [queryParams]="{ngVForScroll: true}" pTooltip="List implementation with the <strong style='color:red;'>ngVForScroll</strong> library" [escape]="false">
       ngVForScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNG']" [queryParams]="{primeNG: true}" title="List implementation with the PrimeNG VirtualScroll library">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNG']" [queryParams]="{primeNG: true}" pTooltip="List implementation with the <strong style='color:red;'>PrimeNG VirtualScroll</strong> library" [escape]="false">
       pNGVirtualScroll
     </button><br>
-    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNGDataView']" [queryParams]="{primeNGDataView: true}" title="List implementation with the PrimeNG DataView library">
+    <button mat-button class="navibtn" routerLinkActive="activeroute" [routerLink]="['/primeNGDataView']" [queryParams]="{primeNGDataView: true}" pTooltip="List implementation with the <strong style='color:red;'>PrimeNG DataView</strong> library" [escape]="false">
       pNGDataView
     </button>
 
