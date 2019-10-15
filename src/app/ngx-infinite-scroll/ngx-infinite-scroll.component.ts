@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EleData, LotOfDataService} from "../lot-of-data.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
 
 @Component({
   selector: 'lons-ngx-infinite-scroll',

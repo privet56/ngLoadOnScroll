@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {EleData, LotOfDataService} from "../lot-of-data.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
 import {LazyLoadEvent} from "primeng/api";
-import {StyleService} from "../style.service";
+import {StyleService} from "../services/style.service";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 

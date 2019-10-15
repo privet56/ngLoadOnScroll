@@ -71,3 +71,18 @@ ng serve --host 0.0.0.0 --disableHostCheck true
   ```
 
 <img src="src/assets/ngloadonscroll.libsizes.png" width="550px" />
+
+## State Management of the App
+```sh
+npm install @ngrx/store --save
+# or better:
+ng add @ngrx/store
+npm install github:ngrx/schematics-builds --save-dev
+npm install @ngrx/{store,effects,entity,store-devtools} --save  # install them on-by-one
+ng config cli.defaultCollection @ngrx/schematics
+ng generate action states/LotOfData         # > src/app/states/lot-of-data.actions.ts
+ng generate reducer LotOfData --flat=false  # > src/app/reducers/lot-of-data.reducer.ts   # no --module
+ng generate effect states/LotOfData         # > src/app/states/lot-of-data.effects.ts     # no --module
+```
+Take care: from now on, your State Data is read-only! 
+("ListEleComponent.html:19 ERROR TypeError: Cannot add property 1, object is not extensible")

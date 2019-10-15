@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "ngLoadOnScroll"
+  "defaultProject": "ngLoadOnScroll",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

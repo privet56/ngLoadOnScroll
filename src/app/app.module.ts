@@ -31,6 +31,10 @@ import { PrimengdataviewScrollComponent } from './primengdataview-scroll/primeng
 import {TooltipModule} from 'primeng/tooltip';
 import {LightboxModule} from 'primeng/lightbox';
 import {OverlayPanelModule} from 'primeng/overlaypanel';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import {LotOfDataEffects} from "./states/lot-of-data.effects";
+import {EffectsModule} from "@ngrx/effects";
 
 @NgModule({
   declarations: [
@@ -59,7 +63,16 @@ import {OverlayPanelModule} from 'primeng/overlaypanel';
     DataViewModule,
     TooltipModule,
     LightboxModule,
-    OverlayPanelModule
+    OverlayPanelModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    EffectsModule.forRoot([]),
+    EffectsModule.forFeature([LotOfDataEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

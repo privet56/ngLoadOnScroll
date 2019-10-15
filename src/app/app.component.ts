@@ -1,12 +1,12 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {ViewChild} from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
-import {StyleService} from "./style.service";
+import {StyleService} from "./services/style.service";
 
 @Component({
   selector: 'lons-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app-component/app.component.html',
+  styleUrls: ['./app-component/app.component.scss']
 })
 export class AppComponent implements OnInit
 {

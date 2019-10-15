@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EleData, LotOfDataService} from "../lot-of-data.service";
-import {StyleService} from "../style.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
+import {StyleService} from "../services/style.service";
 
 @Component({
   selector: 'lons-welcome',

@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {IPageInfo, VirtualScrollerComponent} from 'ngx-virtual-scroller';
-import {EleData, LotOfDataService} from "../lot-of-data.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
 
 @Component({
   selector: 'lons-ngx-virt-scroll',

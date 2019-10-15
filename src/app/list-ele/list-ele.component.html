@@ -6,25 +6,25 @@
           <img src="assets/ngloadonscroll.gif" width="64px" style="float:left;" pTooltip="large picture">
       </td>
       <td>
-          <img src="https://source.unsplash.com/64x64/?face?{{_data.index}}" width="64px" style="float:left;" pTooltip="profile picture (loaded asynchronously)">
+          <img src="https://source.unsplash.com/64x64/?face?{{(_data$ | async).index}}" width="64px" style="float:left;" pTooltip="profile picture (loaded asynchronously)">
       </td>
       <td style="padding-right: 6px; margin-left: 6px;">
-        <h1 title="This is element Nr. {{_data.index}}"> {{_data.index}} </h1>
+        <h1 title="This is element Nr. {{(_data$ | async).index}}"> {{(_data$ | async).index}} </h1>
       </td>
-      <td style="text-align: left;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
-        <div style="white-space:nowrap;" pTooltip="{{_data.name}}">{{_data.name}}</div>
-        <div style="white-space:nowrap;">{{_data.departement}}</div>
+      <td style="text-align: left;" [style.background-color]="(_data$ | async).index % 2 === 0 ? '#EEEEEE':'#fcfbf7'">
+        <div style="white-space:nowrap;" pTooltip="{{(_data$ | async).name}}">{{(_data$ | async).name}}</div>
+        <div style="white-space:nowrap;">{{(_data$ | async).departement}}</div>
       </td>
       <td style="width: 100%;min-width:133px;" class="buns" [style.display]="!isMobile ? 'table-cell' : 'none'">
         <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
-          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px" title="Click to increase" style="cursor: pointer;">
+          <img *ngFor="let i of (_data$ | async).buns" src="assets/bun.png?{{(_data$ | async).index}}" width="32px" title="Click to increase" style="cursor: pointer;">
         </div>
       </td>
     </tr>
     <tr>
       <td colspan="9" style="width: 100%;" class="buns" [style.display]="isMobile ? '' : 'none'">
         <div (click)="onClickBun()" style="max-height:77px;overflow:auto;">
-          <img *ngFor="let i of buns" src="assets/bun.png?{{_data.index}}" width="32px" title="Click to increase" style="cursor: pointer;">
+          <img *ngFor="let i of (_data$ | async).buns" src="assets/bun.png?{{(_data$ | async).index}}" width="32px" title="Click to increase" style="cursor: pointer;">
         </div>
       </td>
     </tr>

@@ -1,6 +1,11 @@
 import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
-import {EleData} from "../lot-of-data.service";
-import {StyleService} from "../style.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
+import {StyleService} from "../services/style.service";
+import {select, Store} from "@ngrx/store";
+import {State} from "../reducers";
+import {AddBunAction, LoadAllData} from "../states/lot-of-data.actions";
+import {Observable} from "rxjs";
+import {getAllDataSelector, selectFromAllDataById} from "../states/lot-of-data.selectors";
 
 @Component({
   selector: 'lons-list-ele',
@@ -9,11 +14,11 @@ import {StyleService} from "../style.service";
 })
 export class ListEleComponent implements OnInit
 {
-  buns: Array<number> = new Array<number>();
   _data: EleData = null;
+  _data$ : Observable<EleData>;
   public isMobile: boolean = false;
 
-  constructor(public styleService: StyleService, public changeDetectorRef: ChangeDetectorRef) {
+  constructor(public styleService: StyleService, public changeDetectorRef: ChangeDetectorRef, private store:Store<State>) {
   }
 
   ngOnInit()
@@ -22,6 +27,7 @@ export class ListEleComponent implements OnInit
       this.isMobile = isMobile;
       StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
     });
+    this._data$ = this.store.pipe(select(selectFromAllDataById(this._data.index)));
   }
   protected _initLocalState()
   { /*
@@ -33,22 +39,25 @@ export class ListEleComponent implements OnInit
   }
   onClickBun() : void
   {
-    this.buns.push(this.buns.length);
-    StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
+/* version without state management (_data)
+    //this.buns.push(this.buns.length);
+    //StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
+*/
+//version with statemanagement (_data$ | async)
+    this.store.dispatch(new AddBunAction({add:1, eleId: this._data.index}));
   }
   get expanded() : boolean
   {
-    if(!this.buns) {
+    if(!this._data.buns) {
       return false;
     }
-    const b: boolean = this.buns.length > 9;
+    const b: boolean = this._data.buns.length > 9;
     return b;
   }
   @Input('data')
   set data(data: EleData)
   {
     this._data = data;
-    this.buns = this._data.buns;
     this._initLocalState();
   }
 }

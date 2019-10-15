@@ -1,11 +1,11 @@
 <div style="background-color: #faf6eb;position: relative;display: block;height: 97%;">
   https://github.com/anagram4wander/ng-vfor-lib
-  <div class="loader" *ngIf="loading" >
+  <div class="loader" *ngIf="loading$ | async" >
     <img src="assets/spinner.gif" width="66px;">
     <br>Loading...
   </div>
   <nggud-items-control>
-    <div *ngVFor='let row of allData'>
+    <div *ngVFor='let row of allData$ | async'>
       <lons-list-ele [data]="row"></lons-list-ele>
     </div>
   </nggud-items-control>

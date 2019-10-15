@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {EleData, LotOfDataService} from "../lot-of-data.service";
+import {EleData, LotOfDataService} from "../services/lot-of-data.service";
 import {LazyLoadEvent} from "primeng/api";
 
 @Component({

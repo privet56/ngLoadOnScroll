@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+import {from, Observable} from "rxjs";
 
 export class EleData
 {
   buns: Array<number> = [];
-  constructor(public index:number, public name: string, public departement: string)
+  constructor(public index:number, public name: string, public departement: string, buns: number = 0)
   {
-    const ix:number = Math.floor(Math.random() * 5);
+    const ix:number = buns > 0 ? buns : Math.floor(Math.random() * 5);
     this.buns = new Array<number>();
     for(let i:number = 0; i < ix;i++)
       this.buns.push(i);
+  }
+  static withAddBuns(e: EleData, add: number) : EleData
+  {
+    const buns = e.buns.length + add;
+    return new EleData(e.index, e.name, e.departement, buns);
   }
 }
 
@@ -31,6 +37,10 @@ export class LotOfDataService
     }
   }
 
+  public fetchAllAsObservable(): Observable<EleData[]> {
+    return from(this.fetchAll());
+  }
+
   public fetchAll(): Promise<EleData[]>
   {
     return new Promise((resolve, reject) => {
@@ -39,9 +49,9 @@ export class LotOfDataService
       }, 999);
     });
   }
-  public fetchAllImmediately(): EleData[]
-  {
-        return this.data;
+
+  public fetchNextChunkAsObservable(skip: number, limit: number): Observable<EleData[]> {
+    return from(this.fetchNextChunk(skip, limit));
   }
 
   public fetchNextChunk(skip: number, limit: number): Promise<EleData[]>
