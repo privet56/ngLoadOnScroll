@@ -12,11 +12,11 @@
     (scrolledUp)="onScrollUp($event)">
       <section class="content">
 
-        <div *ngFor='let row of buffer'>
+        <div *ngFor='let row of (buffer$ | async)'>
           <lons-list-ele [data]="row"></lons-list-ele>
         </div>
 
-        <div class="loader" *ngIf="loading" >
+        <div class="loader" *ngIf="loading$ | async" >
           <img src="assets/spinner.gif" width="66px;">
           <br>Loading...
         </div>

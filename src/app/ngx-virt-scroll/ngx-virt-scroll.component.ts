@@ -45,7 +45,7 @@ export class NgxVirtScrollComponent extends ScrollComponentBase implements OnIni
       return;
     }
 
-    this.dispatchLoadData(buffer.length, 10);
+    this.dispatchLoadData(buffer.length, 20);
 
 /* code without state management
     this.loading = true;

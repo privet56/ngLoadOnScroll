@@ -13,7 +13,7 @@
       </lons-list-ele>
     </ng-template>
     <ng-template pTemplate="loadingItem">
-      <div class="loader" *ngIf="loading" >
+      <div class="loader" *ngIf="loading$ | async" >
         <img src="assets/spinner.gif" width="66px;">
         <br>Loading...
       </div>
