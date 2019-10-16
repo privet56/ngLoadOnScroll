@@ -4,7 +4,7 @@
     <img src="assets/spinner.gif" width="66px;">
     <br>Loading...
   </div>
-  <nggud-items-control>
+  <nggud-items-control *ngIf="!(loading$ | async)">
     <div *ngVFor='let row of allData$ | async'>
       <lons-list-ele [data]="row"></lons-list-ele>
     </div>

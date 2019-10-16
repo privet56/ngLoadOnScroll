@@ -22,7 +22,7 @@
     <img src="assets/ngloadonscroll.mobile.detection.gif" pTooltip="Switch between mobile and desktop view">
   </p-overlayPanel>
 
-  <h3 style="width:100%;text-align: left" pTooltip="This is how an element looks:">This is how an element looks:</h3>
+  <h3 *ngIf="item" style="width:100%;text-align: left" pTooltip="This is how an element looks:">This is how an element looks:</h3>
   <lons-list-ele [data]="item">
   </lons-list-ele>
 

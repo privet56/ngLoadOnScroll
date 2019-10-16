@@ -1,6 +1,6 @@
 <!-- div style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;" [style.background-color]="_data.index % 2 === 0 ? '#EEEEEE':'#fcfbf7'" -->
-  <table style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;"
-         [ngStyle]="{'height.px': expanded ? '133' : '', 'background-color': expanded ? '#f5aca6' : ''}">
+  <table *ngIf="_dataindex > -1" style="width:99%;margin: 3px;padding:3px;border-bottom-style: inset;border-bottom-width: 2px;border-bottom-color: #DDDDDD;"
+         [ngStyle]="{'height.px': (_expanded$ | async) ? '133' : '', 'background-color': (_expanded$ | async) ? '#f5aca6' : ''}">
     <tr>
       <td>
           <img src="assets/ngloadonscroll.gif" width="64px" style="float:left;" pTooltip="large picture">

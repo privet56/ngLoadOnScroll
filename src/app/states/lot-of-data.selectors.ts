@@ -2,7 +2,6 @@ import {createFeatureSelector, createSelector} from '@ngrx/store';
 import {State} from "../reducers";
 import {LotOfDataState} from "../reducers/lot-of-data.reducer";
 import {EleData} from "../services/lot-of-data.service";
-import {element} from "protractor";
 
 export const selectLotOfDataState = (state:State) => state.lotOfData;
 
@@ -18,5 +17,10 @@ export const getAllDataTotal = createSelector(getAllDataSelector, allData => all
 export const getDataTotal = createSelector(getDataSelector, data => data.length);
 
 //export const selectFromAllDataById = (id:number) => createSelector(getAllDataSelector, allData => allData.filter((eleData: EleData) => eleData.index === id));
-export const selectFromAllDataById = (id:number) => createSelector(getAllDataSelector, allData => allData.find((eleData:EleData) => eleData.index === id));
+export const selectFromAllDataById = (id:number) => createSelector(getAllDataSelector, allData => {
+  const e:EleData = allData.find((eleData:EleData) => eleData.index === id);
+  //console.log("eee("+id+"):"+e);
+  return e;
+});
 export const selectFromDataById = (id:number) => createSelector(getDataSelector, data => data.filter((eleData: EleData) => eleData.index === id));
+export const selectLargeBunnyCountFromAllDataById = (id:number) => createSelector(getAllDataSelector, allData => allData.find((eleData:EleData) => eleData.index === id).buns.length > 9);

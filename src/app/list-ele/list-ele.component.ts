@@ -5,7 +5,11 @@ import {select, Store} from "@ngrx/store";
 import {State} from "../reducers";
 import {AddBunAction, LoadAllData} from "../states/lot-of-data.actions";
 import {Observable} from "rxjs";
-import {getAllDataSelector, selectFromAllDataById} from "../states/lot-of-data.selectors";
+import {
+  getAllDataSelector,
+  selectFromAllDataById,
+  selectLargeBunnyCountFromAllDataById
+} from "../states/lot-of-data.selectors";
 
 @Component({
   selector: 'lons-list-ele',
@@ -14,20 +18,22 @@ import {getAllDataSelector, selectFromAllDataById} from "../states/lot-of-data.s
 })
 export class ListEleComponent implements OnInit
 {
-  _data: EleData = null;
+  //_data: EleData = null;
+  // noinspection SpellCheckingInspection
+  _dataindex: number = -1;
   _data$ : Observable<EleData>;
+  _expanded$ : Observable<boolean>;
   public isMobile: boolean = false;
 
-  constructor(public styleService: StyleService, public changeDetectorRef: ChangeDetectorRef, private store:Store<State>) {
+  constructor(public styleService: StyleService, public changeDetectorRef: ChangeDetectorRef, private store:Store<State>, protected lotOfDataService: LotOfDataService) {
   }
 
   ngOnInit()
   {
     this.styleService.mobileChanged$.subscribe((isMobile:boolean) => {
       this.isMobile = isMobile;
-      StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
+      StyleService.detectChanges(this.changeDetectorRef, "_data:"+this._dataindex);
     });
-    this._data$ = this.store.pipe(select(selectFromAllDataById(this._data.index)));
   }
   protected _initLocalState()
   { /*
@@ -36,16 +42,25 @@ export class ListEleComponent implements OnInit
     for(let i:number = 0; i < ix;i++)
       this.buns.push(i);
     */
+    this._data$ = this.store.pipe(select(selectFromAllDataById(this._dataindex)));
+    this._expanded$ = this.store.pipe(select(selectLargeBunnyCountFromAllDataById(this._dataindex)));
+/* dbg output
+    const eleData: EleData = this.lotOfDataService.data.find((eleData:EleData) => eleData.index === this._dataindex);
+    console.log("eleData("+this._dataindex+") = "+eleData);
+    this._data$.subscribe((eleData:EleData) => {console.log("_data$("+this._dataindex+") = "+eleData)});
+*/
   }
   onClickBun() : void
   {
 /* version without state management (_data)
     //this.buns.push(this.buns.length);
-    //StyleService.detectChanges(this.changeDetectorRef, "_data:"+(this._data ? (this._data.index +":"+ this._data.name) : "[!_data]\""));
 */
 //version with statemanagement (_data$ | async)
-    this.store.dispatch(new AddBunAction({add:1, eleId: this._data.index}));
+    this.store.dispatch(new AddBunAction({add:1, eleId: this._dataindex}));
+
+    StyleService.detectChanges(this.changeDetectorRef, "_data:" + this._dataindex);
   }
+/* version without state management
   get expanded() : boolean
   {
     if(!this._data.buns) {
@@ -54,10 +69,11 @@ export class ListEleComponent implements OnInit
     const b: boolean = this._data.buns.length > 9;
     return b;
   }
+*/
   @Input('data')
   set data(data: EleData)
   {
-    this._data = data;
+    if(data) {this._dataindex = data.index;}
     this._initLocalState();
   }
 }
