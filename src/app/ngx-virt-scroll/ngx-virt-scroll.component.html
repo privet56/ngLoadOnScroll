@@ -3,14 +3,14 @@
     lib; https://github.com/rintoj/ngx-virtual-scroller
   </div>
   <div>
-    # Loaded Elements: {{buffer.length}} of {{ LotOfDataService.ELEDATA_SIZE }}
+    # Loaded Elements: {{(buffer$ | async).length}} of {{ LotOfDataService.ELEDATA_SIZE }}
   </div>
 
 <!-- div #scrollingBlock -->
-  <virtual-scroller #scroll [items]="buffer" (vsEnd)="fetchMore($event)"><!-- [parentScroll]="scrollingBlock" -->
+  <virtual-scroller #scroll [items]="buffer$ | async" (vsEnd)="fetchMore($event)"><!-- [parentScroll]="scrollingBlock" -->
     <lons-list-ele *ngFor="let item of scroll.viewPortItems; trackBy: trackBy" [data]="item">
     </lons-list-ele>
-    <div class="loader" *ngIf="loading" >
+    <div class="loader" *ngIf="loading$ | async" >
       <img src="assets/spinner.gif" width="66px;">
       <br>Loading...
     </div>

@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {EleData, LotOfDataService} from "../services/lot-of-data.service";
 import {Observable} from "rxjs";
 import {select, Store} from "@ngrx/store";
@@ -6,13 +6,14 @@ import {State} from "../reducers";
 import {LoadAllData} from "../states/lot-of-data.actions";
 import {getAllDataSelector, getIsLoadingSelector} from "../states/lot-of-data.selectors";
 import {ScrollComponentBase} from "../ScrollComponentBase";
+import {StyleService} from "../services/style.service";
 
 @Component({
   selector: 'lons-ng-vfor-scroll',
   templateUrl: './ng-vfor-scroll.component.html',
   styleUrls: ['./ng-vfor-scroll.component.scss']
 })
-export class NgVForScrollComponent extends ScrollComponentBase implements OnInit
+export class NgVForScrollComponent extends ScrollComponentBase implements OnInit, OnDestroy
 {
 /* version without state management
   public allData: EleData[] = [];
@@ -24,6 +25,11 @@ export class NgVForScrollComponent extends ScrollComponentBase implements OnInit
   constructor(lotOfDataService: LotOfDataService, store:Store<State>, public changeDetectorRef: ChangeDetectorRef)
   {
     super(lotOfDataService, store);
+  }
+
+  ngOnDestroy(): void
+  {
+    super.ngOnDestroy();
   }
 
   ngOnInit()
@@ -41,8 +47,8 @@ export class NgVForScrollComponent extends ScrollComponentBase implements OnInit
 
     this.allData$ = this.store.pipe(select(getAllDataSelector));
 
-    this.store.pipe(select(getAllDataSelector)).subscribe((allData:EleData[]) => {
-      setTimeout(() =>  this.changeDetectorRef.detectChanges(), 1);
-    });
+    this.subscriptions.push(this.store.pipe(select(getAllDataSelector)).subscribe((allData:EleData[]) => {
+      setTimeout(() =>  StyleService.detectChanges(this.changeDetectorRef,"NgVForScrollComponent"), 1);
+    }));
   }
 }
