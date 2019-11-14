@@ -54,6 +54,9 @@ ng serve --host 0.0.0.0 --disableHostCheck true
 ##### Coolness
    * DataView is auto-sized, so, no manual styling necessary
    * the lib offers a lot of highly configurable components
+   
+### 5. https://alligator.io/angular/infinite-scroll/
+TODO
 
 ## Q&A
    * Q: How to reset list-element state on list-ele reuse?
@@ -68,7 +71,7 @@ ng serve --host 0.0.0.0 --disableHostCheck true
   npm install --save-dev webpack-bundle-analyzer
   npm run build:stats # see package.json
   npm run analyze     # see package.json # opens browser with http://127.0.0.1:8888/
-  ```
+```
 
 <img src="src/assets/ngloadonscroll.libsizes.png" width="550px" />
 
