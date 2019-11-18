@@ -56,7 +56,49 @@ ng serve --host 0.0.0.0 --disableHostCheck true
    * the lib offers a lot of highly configurable components
    
 ### 5. https://alligator.io/angular/infinite-scroll/
-TODO
+TODO<br>
+https://alligator.io/angular/infinite-scroll/<br>
+https://github.com/alligatorio/angular-infinite-scroll<br>
+$ npm install @angular/cdk
+```ts
+import { ScrollingModule} from '@angular/cdk/scrolling';
+imports: [ //in your module
+  ScrollingModule
+]
+
+import { CollectionViewer, DataSource } from '@angular/cdk/collections';
+export class MyDataSource extends DataSource<MyModel | undefined> {
+  private cachedFacts = Array.from<MyModel>({ length: 0 });
+  private dataStream = new BehaviorSubject<(MyModel | undefined)[]>(this.cached);
+  private subscription = new Subscription();
+  connect(collectionViewer: CollectionViewer): Observable<(MyModel | undefined)[] | ReadonlyArray<MyModel | undefined>> {
+    this.subscription.add(collectionViewer.viewChange.subscribe(range => {
+      // Update the data
+    }));
+    return this.dataStream;
+  }
+
+  disconnect(collectionViewer: CollectionViewer): void {
+    this.subscription.unsubscribe();
+  }
+}
+
+//use:
+  this.dataStream.next(this.cached);
+```
+```html
+<cdk-virtual-scroll-viewport itemSize="100">
+  <li *cdkVirtualFor="let fact of dataSource">
+      <!-- list element content -->
+  </li>
+</cdk-virtual-scroll-viewport>
+```
+
+### 6. Develop own solution with 'IntersectionObserver'
+TODO<br>
+(docu: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)<br>
+(see eg. https://alligator.io/js/intersection-observer/)<br>
+
 
 ## Q&A
    * Q: How to reset list-element state on list-ele reuse?
