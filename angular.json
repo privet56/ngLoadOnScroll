@@ -15,7 +15,8 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder_old": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/ngLoadOnScroll",
             "index": "src/index.html",
@@ -34,6 +35,12 @@
           },
           "configurations": {
             "production": {
+              "customWebpackConfig": {
+                "path": "./extra-webpack.config.prod.js",
+                "mergeStrategies_can_be_set": { "externals": "replace|append", "module.rules": "prepend|append" },
+                "mergeStrategies": { "externals": "append", "module.rules": "append" },
+                "replaceDuplicatePlugins": false
+              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",

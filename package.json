@@ -46,7 +46,8 @@
     "e-ngvforlib": "file:src/lib/ng-vfor-lib-0.0.9.tgz"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "0.802.0",
+    "@angular-builders/custom-webpack": "^8.3.0",
+    "@angular-devkit/build-angular": "^0.802.0",
     "@angular/cli": "8.2.0",
     "@angular/compiler-cli": "8.2.0",
     "@angular/language-service": "8.2.0",

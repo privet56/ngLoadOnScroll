@@ -129,5 +129,22 @@ ng generate action states/LotOfData         # > src/app/states/lot-of-data.actio
 ng generate reducer LotOfData --flat=false  # > src/app/reducers/lot-of-data.reducer.ts   # no --module
 ng generate effect states/LotOfData         # > src/app/states/lot-of-data.effects.ts     # no --module
 ```
-Take care: from now on, your State Data is read-only! 
-("ListEleComponent.html:19 ERROR TypeError: Cannot add property 1, object is not extensible")
+Take care: from now on, your State Data is read-only (=immutable)! 
+("ERROR TypeError: Cannot add property 1, object is not extensible")
+
+## Remove console.log in prod build
+(For Angular v. >= 8.x)
+You can change the webpack build (your settins will be merged into Angulars webpack settings)
+#### 1. Install Packages
+```sh
+npm i -D @angular-builders/custom-webpack
+npm i -D @angular-devkit/build-angular
+```
+#### 2. Edit [angular.json](angular.json)
+set architect.build.builder to "@angular-builders/custom-webpack:browser",<br>
+set architect.build.configurations.production.customWebpackConfig.path to "./extra-webpack.config.prod.js"<br>
+        (so you override the PROD configuration only)
+#### 3. Create extra-webpack.config.prod.js
+(this cfg will be **merged** with the default Angular build cfg)<br>
+[extra-webpack.config.prod.js](./extra-webpack.config.prod.js)
+
